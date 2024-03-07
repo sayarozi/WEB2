@@ -6,21 +6,21 @@ $mahasiswa = [
         "nama" => "rozi",
         "jurusan" => "Sistem Informasi",
         "email" => "rozi@stimata.ac.id",
-        "img" =>  "img/foto1.jpg"
+        "img" =>  "foto1.jpg"
     ],
     [
         "nim" => "23518888",
         "nama" => "jesika",
         "jurusan" => "Teknologi Informasi",
         "email" => "jesika@stimata.ac.id",
-        "img" =>  "img/foto2.jpg"
+        "img" =>  "foto2.jpg"
     ],
     [
         "nim" => "23519999",
         "nama" => "anonim",
         "jurusan" => "Teknologi Informasi",
         "email" => "anonim@stimata.ac.id",
-        "img" =>  "img/foto3.jpg"
+        "img" =>  "foto3.jpg"
     ],
 
 ];
@@ -39,7 +39,9 @@ $mahasiswa = [
     <?php foreach ($mahasiswa as $mhs) : ?>
         <ul>
             <li>
-                <a href="latihan.php?nama=<?php echo $mhs['nama']; ?>&nim=<?php echo $mhs['nim']; ?>&jurusan=<?php echo $mhs['jurusan']; ?>&email=<?php echo $mhs['email']; ?>&img=<?php echo $mhs['img']; ?>" > <?php echo $mhs['nama']; ?></a>
+                <a href="latihan2.php?nama=<?= $mhs["nama"]; 
+                ?>&nim=<?= $mhs["nim"]; ?>&jurusan=<?= $mhs["jurusan"]; 
+                ?>&email=<?= $mhs["email"]; ?>&img=<?= $mhs["img"]; ?>" ><?= $mhs["nama"]; ?></a>
             </li>
         </ul>
     <?php endforeach; ?>
