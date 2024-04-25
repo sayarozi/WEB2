@@ -1,10 +1,6 @@
 <?php
-//koneksi ke database
-$koneksi = mysqli_connect("localhost", "root", "", "gamepc");
-
-// ambil data dari tabel 
-$result = mysqli_query($koneksi, "SELECT * from data_game");
-
+require 'functions.php';
+$gamepc = query("select * from data_game");
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +8,7 @@ $result = mysqli_query($koneksi, "SELECT * from data_game");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Admin</title>
+    <title>Detail Game</title>
 </head>
 <body>
     <h1>Daftar Game</h1>
@@ -29,7 +25,7 @@ $result = mysqli_query($koneksi, "SELECT * from data_game");
         </tr>
 
         <?php $i=1; ?>
-        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+        <?php foreach ($gamepc as $row): ?>
 
         <tr>
             <td><?= $i ?></td>
@@ -46,7 +42,7 @@ $result = mysqli_query($koneksi, "SELECT * from data_game");
             <td><?= $row['pengembang'] ?></td>
         </tr>
         <?php $i++ ?>
-        <?php endwhile ?>
+        <?php endforeach; ?>
     </table>
     
 </body>
